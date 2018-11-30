@@ -3,9 +3,19 @@
 //
 #pragma once
 
+#include <vector>
 #include "Piece.h"
 
-class Bishop: Piece {
-    virtual void moveForward();
+class Bishop : public Piece {
+public:
+    Bishop(float boardSizeRadius);
+
+    ~Bishop();
+
+protected:
+    inline const std::vector<Direction> getValidDirections() const override;
+
+private:
+    const std::vector<Direction> validDirs;
 };
 

@@ -1,6 +1,13 @@
-//
-// Created by baize on 22/11/2018.
-//
-
 #include "Bishop.h"
-void Bishop::moveForward() override{}
+
+Bishop::Bishop(float boardSizeRadius) : Piece(boardSizeRadius), validDirs({SOUTH_EAST, SOUTH_WEST, NORTH_EAST, NORTH_WEST}) {
+    shape = CIRCLE;
+}
+
+Bishop::~Bishop() = default;
+
+const std::vector<Direction> Bishop::getValidDirections() const {
+    return validDirs;
+};
+
+
