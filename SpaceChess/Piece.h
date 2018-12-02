@@ -4,7 +4,16 @@
 #include <vector>
 
 #pragma once
+
 //Move to enums class
+struct Position {
+    float x;
+    float y;
+
+    Position(float x, float y) : x(x), y(y) {}
+
+};
+
 enum PieceShape {
     SQUARE,
     CIRCLE,
@@ -27,31 +36,37 @@ enum Axis {
 
 class Piece {
 public:
-    explicit Piece(float boardSizeRadius);
+    explicit Piece(float = 1.0f ,float = 0.0, float = 0.0f);
 
     ~Piece();
 
     void move(float movement, Direction direction);
 
     bool isOverlapping(const Piece &piece) const;
-
+    const Position getPoistion() const;
 protected:
-    virtual const inline std::vector<Direction> getValidDirections() const = 0;
 
-    float inline getMin(Axis axis) const;
-
-    float inline getMax(Axis axis) const;
-
-    float x;
-    float y;
     float radius;
     PieceShape shape;
 
-private:
-    const float RANGE;
-    float boardSizeRadius;
+    virtual const inline std::vector<Direction> getValidDirections() const = 0;
 
-    bool isValidDirection(Direction direction);
+    virtual bool isValidDirection(Direction direction) const = 0;
+
+    float inline getMinAxis(Axis axis) const;
+
+    float inline getMaxAxis(Axis axis) const;
+
+
+private:
+    Position position;
+
+
+    bool circleSquareCollision(const Piece &piece) const;
+
+    bool squareCollision(const Piece &piece) const;
+
+    bool circleCollision(const Piece &piece) const;
 };
 
 

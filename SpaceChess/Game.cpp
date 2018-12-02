@@ -20,11 +20,12 @@ float wrapMinMax(float x, float min, float max) {
 
 int main() {
     Queen queen(1.0f);
-   queen.move(2.1f, SOUTH_WEST);
+    printf("\nR: %2f",queen.getPoistion().y);
+    queen.move(2.000001f, SOUTH_WEST);
 
     Bishop b(1.0f);
 //    b.move(1.1f,NORTH_EAST);
-    printf("\nOverlap : %d PLS\n",b.isOverlapping(queen));
+    printf("\nOverlap : %d PLS\n", b.isOverlapping(queen));
 
 //    printf("wrapped: %.2f", wrapMinMax(4.0f, -4.0f, 4.0f));
     return 0;

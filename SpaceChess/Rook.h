@@ -8,12 +8,14 @@
 
 class Rook : public Piece {
 public:
-    Rook(float boardSizeRadius);
+    explicit Rook(float = 1.0f ,float = 0.0, float = 0.0f);
 
     ~Rook();
 
 protected:
     inline const std::vector<Direction> getValidDirections() const override;
+
+    bool isValidDirection(Direction direction) const override;
 
 private:
     //Make this static

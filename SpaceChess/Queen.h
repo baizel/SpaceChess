@@ -8,12 +8,14 @@
 
 class Queen : public Piece {
 public:
-    Queen(float boardSizeRadius);
+    explicit Queen(float = 1.0f ,float = 0.0, float = 0.0f);
 
     ~Queen();
 
 protected:
     inline const std::vector<Direction> getValidDirections() const override;
+
+    bool isValidDirection(Direction direction) const override;
 
 private:
     const std::vector<Direction> validDirs;

@@ -8,12 +8,14 @@
 
 class Bishop : public Piece {
 public:
-    Bishop(float boardSizeRadius);
+    explicit Bishop(float = 1.0f ,float = 0.0, float = 0.0f);
 
     ~Bishop();
 
 protected:
     inline const std::vector<Direction> getValidDirections() const override;
+
+    bool isValidDirection(Direction direction) const override;
 
 private:
     const std::vector<Direction> validDirs;

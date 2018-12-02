@@ -4,12 +4,17 @@
 
 #include "Queen.h"
 
-Queen::Queen(float boardSizeRadius) :Piece(boardSizeRadius), validDirs({NORTH, NORTH_EAST, EAST, SOUTH_EAST, SOUTH, SOUTH_WEST, WEST, NORTH_WEST}) {
+Queen::Queen(float pieceRadius, float x, float y) : Piece(pieceRadius,x,y), validDirs(
+        {NORTH, NORTH_EAST, EAST, SOUTH_EAST, SOUTH, SOUTH_WEST, WEST, NORTH_WEST}) {
     shape = CIRCLE;
 }
+
+Queen::~Queen() = default;
 
 const std::vector<Direction> Queen::getValidDirections() const {
     return validDirs;
 }
 
-Queen::~Queen() = default;
+bool Queen::isValidDirection(Direction direction) const {
+    return (std::find(std::begin(validDirs), std::end(validDirs), direction) != std::end(validDirs));
+}
