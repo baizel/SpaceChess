@@ -1,6 +1,3 @@
-//
-// Created by baize on 22/11/2018.
-//
 #pragma once
 
 #include <vector>
@@ -8,13 +5,13 @@
 
 class Rook : public Piece {
 public:
-    explicit Rook(float = 1.0f ,float = 0.0, float = 0.0f);
+    explicit Rook(float = 1.0f, float = 0.0, float = 0.0f);
 
     ~Rook();
 
-protected:
     inline const std::vector<Direction> getValidDirections() const override;
 
+protected:
     bool isValidDirection(Direction direction) const override;
 
 private:

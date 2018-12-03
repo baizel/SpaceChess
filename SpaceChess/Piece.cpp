@@ -1,21 +1,17 @@
-//
-// Created by baize on 22/11/2018.
-//
-#define _USE_MATH_DEFINES // for C++
-
-#include <cmath>
+#include "Piece.h"
+#include "Utils.h"
 #include <algorithm>
 #include <stdexcept>
 #include <iostream>
-#include "Piece.h"
-#include "Utils.h"
+
+const static float M_PI = 3.14159265358979323846f; //cmath is not working 
 
 Piece::Piece(float pieceRadius, float x, float y) : position(x, y), radius(pieceRadius),
                                                                  shape(UNKNOWN_SHAPE) {}
 
 Piece::~Piece() = default;
 
-void Piece::move(float movement, Direction direction) {
+void Piece::move(float movement, Direction direction) {	
     if (isValidDirection(direction)) {
         position.x += movement * (float) sin((direction * M_PI) / 180);
         position.y += movement * (float) cos((direction * M_PI) / 180);

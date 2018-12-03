@@ -1,9 +1,6 @@
-//
-// Created by baize on 22/11/2018.
-//
+#pragma once
 #include <vector>
 
-#pragma once
 
 //Move to enums class
 struct Position {
@@ -36,20 +33,24 @@ enum Axis {
 
 class Piece {
 public:
-    explicit Piece(float = 1.0f ,float = 0.0, float = 0.0f);
+	
+    explicit Piece(float = 1.0f, float = 0.0, float = 0.0f);
 
     ~Piece();
 
     void move(float movement, Direction direction);
 
     bool isOverlapping(const Piece &piece) const;
+
     const Position getPoistion() const;
+
+    virtual const inline std::vector<Direction> getValidDirections() const = 0;
+
 protected:
 
     float radius;
     PieceShape shape;
 
-    virtual const inline std::vector<Direction> getValidDirections() const = 0;
 
     virtual bool isValidDirection(Direction direction) const = 0;
 
