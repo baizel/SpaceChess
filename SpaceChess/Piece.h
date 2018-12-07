@@ -1,50 +1,29 @@
 #pragma once
+#include "Position.h"
+#include "Directions.h"
+#include "PieceShape.h"
+#include "Axis.h"
+
 #include <vector>
 
 
-//Move to enums class
-struct Position {
-    float x;
-    float y;
-
-    Position(float x, float y) : x(x), y(y) {}
-
-};
-
-enum PieceShape {
-    SQUARE,
-    CIRCLE,
-    UNKNOWN_SHAPE
-};
-enum Direction {
-    NORTH = 0,
-    NORTH_EAST = 45,
-    EAST = 90,
-    SOUTH_EAST = 135,
-    SOUTH = 180,
-    SOUTH_WEST = 225,
-    WEST = 270,
-    NORTH_WEST = 315,
-    UNKNOWN_DIRECTION
-};
-enum Axis {
-    X, Y
-};
 
 class Piece {
 public:
-	
+
     explicit Piece(float = 1.0f, float = 0.0, float = 0.0f);
 
-    ~Piece();
+    virtual ~Piece();
 
-    void move(float movement, Direction direction);
+    void move(float movement, Direction direction, float = 0.0f, bool = false);
 
     bool isOverlapping(const Piece &piece) const;
 
     const Position getPoistion() const;
 
     virtual const inline std::vector<Direction> getValidDirections() const = 0;
+
+    bool toBeDeleted;
 
 protected:
 
@@ -54,6 +33,11 @@ protected:
 
     virtual bool isValidDirection(Direction direction) const = 0;
 
+    /**
+     * Assumes no rotation is applied ot the shape
+     * @param axis
+     * @return
+     */
     float inline getMinAxis(Axis axis) const;
 
     float inline getMaxAxis(Axis axis) const;
@@ -61,7 +45,6 @@ protected:
 
 private:
     Position position;
-
 
     bool circleSquareCollision(const Piece &piece) const;
 

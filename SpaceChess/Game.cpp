@@ -5,30 +5,18 @@
 #include "Bishop.h"
 #include <random>
 
-
-///* wrap x -> [0,max) */
-//float wrapMax(float x, float max) {
-//    /* integer math: `(max + x % max) % max` */
-//    return fmod(max + fmod(x, max), max);
-//}
-//
-///* wrap x -> [min,max) */
-//float wrapMinMax(float x, float min, float max) {
-//    float wrapedMax = wrapMax(x - min, max - min);
-//    float comp = 0.00f - wrapedMax;
-////    printf("Wrap max: %.2f min: %.2f, comp: %.2f",wrapedMax,min,comp);
-//    return min + wrapedMax;
-//}
-
 const static float PIECE_RADIUS = 1.0f;
-const static float BOARD_RADIUS = 10.0f;
+const static float BOARD_RADIUS = 20.0f;
 
-const static float LOWER_RANDOM_MOVEMENT = 0.0f;
-const static float UPPER_RANDOM_MOVEMENT = 2.0f;
+const static float UPPER_RANDOM_MOVEMENT = 10.0f;
 
 const static int NUMBER_OF_EACH_PIECE = 100;
 const static int ROUNDS = 100;
+const static bool IS_BOUNDED_TO_BOARD = true;
 
+static int rookCounter = 0;
+static int bishopCounter = 0;
+static int queenCounter = 0;
 
 std::mt19937 getGenerator() {
     std::random_device rd; // obtain a random number from hardware
@@ -37,7 +25,7 @@ std::mt19937 getGenerator() {
 
 }
 
-void initPieces(std::vector<Piece*> &pieces) {
+void initPieces(std::vector<Piece *> &pieces) {
     std::mt19937 eng = getGenerator();
     for (int i = 0; i < NUMBER_OF_EACH_PIECE; ++i) {
         std::uniform_real_distribution<float> distribution(BOARD_RADIUS * -1, BOARD_RADIUS);
@@ -53,26 +41,52 @@ void moveRandomAmount(Piece &piece) {
     std::vector<Direction> directions = piece.getValidDirections();
 
     std::uniform_int_distribution<> directionRange(0, directions.size() - 1);
-    std::uniform_real_distribution<float> movementRange(LOWER_RANDOM_MOVEMENT, UPPER_RANDOM_MOVEMENT);
+    std::uniform_real_distribution<float> movementRange(0, UPPER_RANDOM_MOVEMENT);
 
     float move = movementRange(eng);
     Direction randomDir = directions[directionRange(eng)];
 
-    piece.move(move, randomDir);
+    piece.move(move, randomDir, BOARD_RADIUS, IS_BOUNDED_TO_BOARD);
+
+    //TODO: Bound to box
+}
+
+void erasePieces(std::vector<Piece *> &pieces, int j = 0) {
+    int size = pieces.size();
+    for (int i = size - 1; i >= 0; --i) {
+        //  std::cout<<"Size: "<<pieces.size() <<" i: " <<i <<"\n";
+        if (pieces[i]->toBeDeleted) {
+            auto &t = *pieces[i];
+            if (typeid(Rook) == typeid(t)) {
+                rookCounter++;
+            } else if (typeid(Bishop) == typeid(t)) {
+                bishopCounter++;
+            } else if (typeid(Queen) == typeid(t)) {
+                queenCounter++;
+            }
+            delete pieces[i];
+            pieces.erase(pieces.begin() + i);
+        }
+    };
 }
 
 int main() {
-    std::vector<Piece*> pieces;
+
+
+    std::vector<Piece *> pieces;
     initPieces(pieces);
-    for (int i=0; i< ROUNDS; ++i){
-        //TODO: stop mutating vector when iterating through it
-        for (unsigned int j = 0; j < pieces.size(); ++j){
+    for (int i = 0; i < ROUNDS && pieces.size() > 1; ++i) {
+        erasePieces(pieces);
+       // std::cout << "Size: " << pieces.size() << "\n";
+        for (unsigned int j = 0; j < pieces.size(); ++j) {
             moveRandomAmount(*pieces[j]);
-            for (unsigned int k =0; k < pieces.size(); ++k){
-                if (pieces[j]->isOverlapping(*pieces[k]) && j!=k){
-                    // printf("Collision! %s (at position x: %2f y: %2f) is taking %s (at position x: %2f y: %2f) \n",
-                    //        "TODO", pieces[j]->getPoistion().x,pieces[j]->getPoistion().y,"TODO",pieces[k]->getPoistion().x,pieces[k]->getPoistion().y);
-                    pieces.erase(pieces.begin()+k);
+            for (unsigned int k = 0; k < pieces.size(); ++k) {
+                if (pieces[j]->isOverlapping(*pieces[k]) && j != k && !pieces[k]->toBeDeleted) {
+                    pieces[k]->toBeDeleted = true;
+                    std::cout << "Collision! "
+                    << typeid(*pieces[j]).name() <<" at pos x:" << pieces[j]->getPoistion().x <<" y: "<<pieces[j]->getPoistion().y <<" "
+                    << typeid(*pieces[k]).name() <<" at pos x:" << pieces[k]->getPoistion().x <<" y: "<<pieces[k]->getPoistion().y
+                    << "\n";
 
                 }
 
@@ -80,5 +94,10 @@ int main() {
         }
     }
 
+    std::cout << "\nRook captured: " << rookCounter << ", Bishop captured: " << bishopCounter << ", Queen captured: "
+              << queenCounter << "\n";
+	float x;
+	std::cin >> x;
     return 0;
 }
+

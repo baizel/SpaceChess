@@ -7,14 +7,32 @@
 const static float M_PI = 3.14159265358979323846f; //cmath is not working 
 
 Piece::Piece(float pieceRadius, float x, float y) : position(x, y), radius(pieceRadius),
-                                                                 shape(UNKNOWN_SHAPE) {}
+                                                    shape(UNKNOWN_SHAPE), toBeDeleted(false) {}
 
 Piece::~Piece() = default;
 
-void Piece::move(float movement, Direction direction) {	
+void Piece::move(float movement, Direction direction, float boundaryRadius, bool isBounded) {
     if (isValidDirection(direction)) {
         position.x += movement * (float) sin((direction * M_PI) / 180);
         position.y += movement * (float) cos((direction * M_PI) / 180);
+        if (isBounded ) {
+            if (boundaryRadius <=0.0){
+                throw std::invalid_argument("Boundary Radius cannot be less than or equal to 0");
+            }
+            if (position.x > boundaryRadius) {
+                position.x = boundaryRadius;
+            }
+            if (position.x < boundaryRadius * -1) {
+                position.x = boundaryRadius * -1;
+            }
+            if (position.y > boundaryRadius) {
+                position.y = boundaryRadius;
+            }
+            if (position.y < boundaryRadius * -1) {
+                position.y = boundaryRadius * -1;
+            }
+        }
+
     } else {
         throw std::invalid_argument("Invalid direction");
     }
@@ -54,7 +72,6 @@ bool Piece::squareCollision(const Piece &piece) const {
 }
 
 bool Piece::circleSquareCollision(const Piece &piece) const {
-    // TODO: Do this but like not copy stack overflow
     const Piece &circle = piece.shape == CIRCLE ? piece : *this;
     const Piece &square = piece.shape == SQUARE ? piece : *this;
 
