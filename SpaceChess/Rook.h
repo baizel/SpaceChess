@@ -7,7 +7,7 @@ class Rook : public Piece {
 public:
     explicit Rook(float = 1.0f, float = 0.0, float = 0.0f);
 
-    ~Rook();
+    ~Rook() override;
 
     inline const std::vector<Direction> getValidDirections() const override;
 

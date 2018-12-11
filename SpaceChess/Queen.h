@@ -7,7 +7,7 @@ class Queen : public Piece {
 public:
     explicit Queen(float = 1.0f, float = 0.0, float = 0.0f);
 
-    ~Queen();
+    ~Queen() override;
 
     inline const std::vector<Direction> getValidDirections() const override;
 

@@ -4,7 +4,7 @@
 
 #include "Queen.h"
 
-Queen::Queen(float pieceRadius, float x, float y) : Piece(pieceRadius,x,y), validDirs(
+Queen::Queen(float pieceRadius, float x, float y) : Piece(pieceRadius, x, y), validDirs(
         {NORTH, NORTH_EAST, EAST, SOUTH_EAST, SOUTH, SOUTH_WEST, WEST, NORTH_WEST}) {
     shape = CIRCLE;
 }

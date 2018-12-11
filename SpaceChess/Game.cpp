@@ -11,7 +11,7 @@ const static float BOARD_RADIUS = 20.0f;
 const static float UPPER_RANDOM_MOVEMENT = 10.0f;
 
 const static int NUMBER_OF_EACH_PIECE = 100;
-const static int ROUNDS = 100;
+const static int ROUNDS = 1000;
 const static bool IS_BOUNDED_TO_BOARD = true;
 
 static int rookCounter = 0;
@@ -83,10 +83,10 @@ int main() {
             for (unsigned int k = 0; k < pieces.size(); ++k) {
                 if (pieces[j]->isOverlapping(*pieces[k]) && j != k && !pieces[k]->toBeDeleted) {
                     pieces[k]->toBeDeleted = true;
-                    std::cout << "Collision! "
-                    << typeid(*pieces[j]).name() <<" at pos x:" << pieces[j]->getPoistion().x <<" y: "<<pieces[j]->getPoistion().y <<" "
-                    << typeid(*pieces[k]).name() <<" at pos x:" << pieces[k]->getPoistion().x <<" y: "<<pieces[k]->getPoistion().y
-                    << "\n";
+//                    std::cout << "Collision! "
+//                    << typeid(*pieces[j]).name() <<" at pos x:" << pieces[j]->getPoistion().x <<" y: "<<pieces[j]->getPoistion().y <<" "
+//                    << typeid(*pieces[k]).name() <<" at pos x:" << pieces[k]->getPoistion().x <<" y: "<<pieces[k]->getPoistion().y
+//                    << "\n";
 
                 }
 

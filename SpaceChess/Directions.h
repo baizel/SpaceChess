@@ -1,4 +1,8 @@
 #pragma once
+/**
+ * Direction enum which stores the clockwise angle from North in degrees
+ * @author Baize;
+ */
 enum Direction {
     NORTH = 0,
     NORTH_EAST = 45,

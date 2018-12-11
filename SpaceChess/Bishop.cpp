@@ -1,6 +1,7 @@
 #include "Bishop.h"
 
-Bishop::Bishop(float pieceRadius, float x, float y) : Piece(pieceRadius,x,y), validDirs({SOUTH_EAST, SOUTH_WEST, NORTH_EAST, NORTH_WEST}) {
+Bishop::Bishop(float pieceRadius, float x, float y) :
+        Piece(pieceRadius, x, y), validDirs({SOUTH_EAST, SOUTH_WEST, NORTH_EAST, NORTH_WEST}) {
     shape = CIRCLE;
 }
 
