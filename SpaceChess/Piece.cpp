@@ -121,9 +121,10 @@ float inline Piece::getMaxAxis(Axis axis) const {
     }
 }
 
-const Position Piece::getPoistion() const {
+const Position Piece::getPosition() const {
     return position;
 }
 
-
-
+std::ostream &operator<<(std::ostream &outStream, const Piece &piece) {
+    return piece.format(outStream);
+}

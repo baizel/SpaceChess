@@ -16,4 +16,12 @@ protected:
 
 private:
     const std::vector<Direction> validDirs;
+
+    /**
+    * Function to format output data when using cout
+    * @param out
+    * @param obj
+    * @return ostream
+    */
+    std::ostream& format(std::ostream &out) const override;
 };

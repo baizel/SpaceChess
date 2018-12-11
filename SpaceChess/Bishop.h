@@ -23,7 +23,7 @@ public:
 
     /**
      * Override base class to return a list of valid directions
-     * @return
+     * @return list of valid directions
      */
     inline const std::vector<Direction> getValidDirections() const override;
 
@@ -40,5 +40,13 @@ private:
      * Stores valid the directions.
      */
     const std::vector<Direction> validDirs;
+
+    /**
+     * Function to format output data when using cout
+     * @param out
+     * @param obj
+     * @return ostream
+     */
+    std::ostream &format(std::ostream &out) const override;
 };
 

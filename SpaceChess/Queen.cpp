@@ -18,3 +18,9 @@ const std::vector<Direction> Queen::getValidDirections() const {
 bool Queen::isValidDirection(Direction direction) const {
     return (std::find(std::begin(validDirs), std::end(validDirs), direction) != std::end(validDirs));
 }
+
+std::ostream &Queen::format(std::ostream &out) const{
+    out<< "Queen at x: "<< this->getPosition().x << " y: "<< this->getPosition().y;
+    return out;
+}
+

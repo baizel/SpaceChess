@@ -15,3 +15,8 @@ const std::vector<Direction> Rook::getValidDirections() const {
 bool Rook::isValidDirection(Direction direction) const {
     return (std::find(std::begin(validDirs), std::end(validDirs), direction) != std::end(validDirs));
 }
+
+std::ostream &Rook::format(std::ostream &out) const {
+    out << "Rook at x: " << this->getPosition().x << " y: " << this->getPosition().y;
+    return out;
+}

@@ -5,6 +5,7 @@
 #include "PieceShape.h"
 #include "Axis.h"
 #include <vector>
+#include <iostream>
 
 /**
  * Abstract Class 'Piece' to represent a chess piece.
@@ -53,12 +54,14 @@ public:
      * Getter to get the x,y coordinate of a piece
      * @returns Position struct
      */
-    const Position getPoistion() const;
+    const Position getPosition() const;
 
     /**
      * Flag to mark for deletion, Use for the main Game loop
      */
     bool toBeDeleted;
+
+    friend std::ostream &operator<<(std::ostream &outStream, const Piece &piece);
 
 protected:
     /**
@@ -101,6 +104,14 @@ private:
     Position position;
 
     /**
+     * Function to format children when using cout
+     * @param out
+     * @param obj
+     * @return ostream
+     */
+    virtual std::ostream& format(std::ostream &out) const = 0;
+
+    /**
      * Assumes no rotation has applied to any of the shapes
      * Method to detect a Circle Square collision.
      * @param piece
@@ -123,6 +134,7 @@ private:
      * @return True if given pieces collides
      */
     bool circleCollision(const Piece &piece) const;
+
 };
 
 
