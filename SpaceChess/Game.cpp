@@ -18,7 +18,7 @@ const static float PIECE_RADIUS = 1.0f;
 /*
  * Board size (Center to right most size)
  */
-const static float BOARD_RADIUS = 20.0f;
+const static float BOARD_RADIUS = 10.0f;
 /*
  * Flag to set if the pieces should bounded to the board
  */
@@ -33,12 +33,12 @@ const static float LOWER_RANDOM_MOVEMENT = 1.0f;
 /*
  * Number of each pieces to be initialised on the board
  */
-const static int NUMBER_OF_EACH_PIECE = 100;
+const static int NUMBER_OF_EACH_PIECE = 25;
 
 /*
  * Max number of rounds to be played
  */
-const static int MAX_ROUNDS = 100;
+const static int MAX_ROUNDS = 50;
 
 /*
  * Counter to keep track of deleted pieces
@@ -128,7 +128,7 @@ int main() {
 
     int rounds;
     for (rounds = 0; rounds < MAX_ROUNDS && pieces.size() > 1; ++rounds) {
-        eraseAndCountPieces(pieces);
+        std::cout << std::endl << "Start of round " << rounds + 1 << std::endl;
         for (unsigned int i = 0; i < pieces.size(); ++i) {
             if (!pieces[i]->toBeDeleted) {
                 //Move piece if its not supposed to be deleted
@@ -142,12 +142,19 @@ int main() {
                 }
             }
         }
+        eraseAndCountPieces(pieces);
+        std::cout << "=====End of Round " << rounds + 1 << " with " << pieces.size() << " left on the board ====="
+                  << std::endl;
+
     }
 
-    std::cout << "\nRook captured: " << rookCounter << ", Bishop captured: " << bishopCounter << ", Queen captured: "
-              << queenCounter << ", after " << rounds << " rounds." << std::endl;
+    std::cout << std::endl << "=============== Summary =============== " << std::endl
+              << "Rook captured: " << rookCounter << std::endl
+              << "Bishop captured: " << bishopCounter << std::endl
+              << "Queen captured: " << queenCounter << std::endl
+              << "Rounds: " << rounds << "/" << MAX_ROUNDS << std::endl
+              << std::endl << "Remaining piece(s): " << std::endl;
 
-    std::cout << "Remaining piece(s): " << std::endl;
     for (unsigned int i = 0; i < pieces.size(); ++i) {
         std::cout << (*pieces[i]) << std::endl;
     }
