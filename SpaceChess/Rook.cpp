@@ -1,6 +1,8 @@
-#include <cmath>
-#include <iostream>
 #include "Rook.h"
+
+/**
+ * @author Baizel
+ */
 
 Rook::Rook(float pieceRadius, float x, float y) : Piece(pieceRadius, x, y), validDirs({NORTH, EAST, SOUTH, WEST}) {
     shape = SQUARE;

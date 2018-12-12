@@ -1,7 +1,9 @@
 #pragma once
 
 #include <vector>
+#include <iostream>
 #include "Piece.h"
+
 /**
  * Class for Bishop inherited from piece. Shape is a Square and can only move up, down, left, right
  * @author Baizel
@@ -40,7 +42,7 @@ private:
     const std::vector<Direction> validDirs;
 
     /**
-     * Function to format output data when using cout
+     * Function to format output data when using cout. (used in base << )
      * @param out
      * @param obj
      * @return ostream

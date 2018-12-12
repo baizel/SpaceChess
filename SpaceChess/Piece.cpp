@@ -2,8 +2,11 @@
 #include <algorithm>
 #include <stdexcept>
 #include <iostream>
+/**
+ * @author Baizel
+ */
 
-const static float M_PI = 3.14159265358979323846f; //cmath is not working, so had to define my own PI
+const static float M_PI = 3.14159265358979323846f; //cmath is not working, so had to define my own PI.
 
 Piece::Piece(float pieceRadius, float x, float y) : position(x, y), radius(pieceRadius),
                                                     shape(UNKNOWN_SHAPE), toBeDeleted(false) {}
@@ -24,16 +27,16 @@ void Piece::move(float movement, Direction direction, float boundaryRadius, bool
             throw std::invalid_argument("Boundary Radius cannot be less than or equal to 0");
         }
         if (position.x > boundaryRadius) {
-            position.x = boundaryRadius;
+            position.x = boundaryRadius - radius;
         }
         if (position.x < negBoundaryRadius) {
-            position.x = negBoundaryRadius;
+            position.x = negBoundaryRadius + radius;
         }
         if (position.y > boundaryRadius) {
-            position.y = boundaryRadius;
+            position.y = boundaryRadius - radius;
         }
         if (position.y < negBoundaryRadius) {
-            position.y = negBoundaryRadius;
+            position.y = negBoundaryRadius+ radius;
         }
     }
 }
@@ -68,11 +71,11 @@ bool Piece::squareCollision(const Piece &piece) const {
     if (this->shape != SQUARE && piece.shape != SQUARE) {
         throw std::invalid_argument("Invalid Shape for Square Square collision");
     }
-    bool xAxisCheck = (getMinAxis(X) >= piece.getMinAxis(X) && piece.getMinAxis(X) <= getMaxAxis(X)) ||
-                      (getMinAxis(X) >= piece.getMinAxis(X) && piece.getMinAxis(X) <= getMaxAxis(X));
+    bool xAxisCheck = (getMinAxis(X) <= piece.getMinAxis(X) && piece.getMinAxis(X) <= getMaxAxis(X)) ||
+                      (getMinAxis(X) <= piece.getMinAxis(X) && piece.getMinAxis(X) <= getMaxAxis(X));
 
-    bool yAxisCheck = (getMinAxis(Y) >= piece.getMinAxis(Y) && piece.getMinAxis(Y) <= getMaxAxis(Y)) ||
-                      (getMinAxis(Y) >= piece.getMinAxis(Y) && piece.getMinAxis(Y) <= getMaxAxis(Y));
+    bool yAxisCheck = (getMinAxis(Y) <= piece.getMinAxis(Y) && piece.getMinAxis(Y) <= getMaxAxis(Y)) ||
+                      (getMinAxis(Y) <= piece.getMinAxis(Y) && piece.getMinAxis(Y) <= getMaxAxis(Y));
 
     return xAxisCheck && yAxisCheck;
 }
@@ -81,6 +84,7 @@ bool Piece::circleSquareCollision(const Piece &piece) const {
     if ((this->shape == CIRCLE && piece.shape == CIRCLE) || (this->shape == SQUARE && piece.shape == SQUARE)) {
         throw std::invalid_argument("Invalid shape for Circle Square collision");
     }
+
     const Piece &circle = piece.shape == CIRCLE ? piece : *this;
     const Piece &square = piece.shape == SQUARE ? piece : *this;
 

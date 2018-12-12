@@ -42,7 +42,7 @@ private:
     const std::vector<Direction> validDirs;
 
     /**
-     * Function to format output data when using cout
+     * Function to format output data when using cout. (used in base << )
      * @param out
      * @param obj
      * @return ostream

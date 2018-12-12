@@ -33,9 +33,16 @@ public:
 
     /**
      * Method to move a piece given a movement vector and a direction.
+     * Throws invalid_argument when the direction is invalid
+     * x,y calculation:
      * x = movement * sin(direction)
      * y = movement * cos(direction)
-     * This method can bind the pieces to a boundary by giving the Boundary radius and setting isBounded to true
+     *
+     * This method can bind the pieces to a boundary by giving the Boundary radius and setting isBounded to true.
+     * This will treat the boundary border as a square. i.e max y = Boundary radius, min y = -Boundary radius  and the same for x coordinates
+     * If a piece is over the boundary it will get re positioned to the 'edge' of board
+     * Throws invalid_argument if radius is 0 and isBounded is true
+     *
      * @param movement. A float to move in any given direction. Note: If a diagonal direction is given then movement will be treated as the hypotenuse
      * @param direction. A Direction enum that must be in the set of valid direction
      * @param Optional Float boundaryRadius. Float ot repersent the upper boundary from center. I.E b = 4 then boundary = -4, 4 on x & y axis
@@ -45,6 +52,7 @@ public:
 
     /**
      * Method to check if another piece is overlapping. Assumes only two valid shapes Square and Circle
+     * Throws invalid_argument if shape is anything other than Circle or Square
      * @param piece
      * @return bool. True if overlapping
      */
@@ -109,11 +117,12 @@ private:
      * @param obj
      * @return ostream
      */
-    virtual std::ostream& format(std::ostream &out) const = 0;
+    virtual std::ostream &format(std::ostream &out) const = 0;
 
     /**
      * Assumes no rotation has applied to any of the shapes
      * Method to detect a Circle Square collision.
+     * Throws invalid_argument if this and piece both have the same shape
      * @param piece
      * @return True if given pieces collides
      */
@@ -122,6 +131,7 @@ private:
     /**
      * Assumes no rotation has applied to any of the shapes
      * Method to detect Square Square collision. Uses min and max of each square
+     * Throws invalid_argument if this and piece is not Square
      * @param piece
      * @return True if given pieces collides
      */
@@ -130,6 +140,7 @@ private:
     /**
      * Method to check for Circle Circle collision
      * compares the length from the 2 center and radius added together.
+     * Throws invalid_argument if this and piece is not Circle
      * @param piece
      * @return True if given pieces collides
      */
