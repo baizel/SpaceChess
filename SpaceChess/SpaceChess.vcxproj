@@ -118,8 +118,12 @@
     <ClCompile Include="Rook.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Axis.h" />
     <ClInclude Include="Bishop.h" />
+    <ClInclude Include="Directions.h" />
     <ClInclude Include="Piece.h" />
+    <ClInclude Include="PieceShape.h" />
+    <ClInclude Include="Position.h" />
     <ClInclude Include="Queen.h" />
     <ClInclude Include="Rook.h" />
   </ItemGroup>
