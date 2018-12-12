@@ -1,0 +1,175 @@
+Start of round 1
+Rook at x: 8.73944 y: -3.84828 Captured Piece Rook at x: 8.82417 y: -3.10137
+Rook at x: 8.73944 y: -3.84828 Captured Piece Queen at x: 9.11198 y: -4.74408
+Rook at x: 8.73944 y: -3.84828 Captured Piece Bishop at x: 9.94568 y: -3.90337
+Bishop at x: 2.1082 y: 3.19079 Captured Piece Rook at x: 3.38627 y: 3.90317
+Bishop at x: 2.1082 y: 3.19079 Captured Piece Queen at x: 2.1863 y: 2.55105
+Bishop at x: 2.1082 y: 3.19079 Captured Piece Rook at x: 2.61844 y: 3.2577
+Bishop at x: 2.1082 y: 3.19079 Captured Piece Rook at x: 3.25198 y: 1.41201
+Rook at x: 9 y: 1.80702 Captured Piece Queen at x: 9.42643 y: 1.9066
+Queen at x: 1.45898 y: 2.25829 Captured Piece Bishop at x: 2.1082 y: 3.19079
+Queen at x: 1.45898 y: 2.25829 Captured Piece Queen at x: 1.05221 y: 1.27207
+Queen at x: 1.45898 y: 2.25829 Captured Piece Rook at x: -0.340172 y: 2.64381
+Queen at x: 1.45898 y: 2.25829 Captured Piece Bishop at x: 0.745892 y: 1.46092
+Bishop at x: 2.90661 y: -6.90055 Captured Piece Rook at x: 3.1433 y: -4.96735
+Bishop at x: 2.90661 y: -6.90055 Captured Piece Queen at x: 2.01847 y: -5.41195
+Queen at x: -5.31231 y: 8.80104 Captured Piece Rook at x: -6.6285 y: 8.328
+Queen at x: -5.31231 y: 8.80104 Captured Piece Bishop at x: -5.31287 y: 8.61239
+Rook at x: -6.51002 y: -1.24136 Captured Piece Queen at x: -6.73064 y: -0.122638
+Rook at x: -6.51002 y: -1.24136 Captured Piece Bishop at x: -7.59423 y: -0.707181
+Rook at x: -6.51002 y: -1.24136 Captured Piece Bishop at x: -7.00734 y: 0.530661
+Bishop at x: 9 y: 0.965668 Captured Piece Rook at x: 9 y: 1.80702
+Bishop at x: 9 y: 0.965668 Captured Piece Rook at x: 9.02803 y: 0.577785
+Rook at x: -0.225893 y: 8.22884 Captured Piece Queen at x: -0.97135 y: 6.30836
+Rook at x: -0.225893 y: 8.22884 Captured Piece Queen at x: -1.37755 y: 9.77293
+Queen at x: 5.98893 y: 9 Captured Piece Bishop at x: 4.42425 y: 8.84204
+Rook at x: -9 y: 4.02245 Captured Piece Queen at x: -9.39856 y: 5.1145
+Bishop at x: -9.38953 y: 0.0452671 Captured Piece Rook at x: -9.86161 y: 0.13063
+Bishop at x: -9.38953 y: 0.0452671 Captured Piece Rook at x: -9.65282 y: -1.47472
+Bishop at x: 3.16066 y: 9 Captured Piece Bishop at x: 2.13938 y: 9.49417
+Queen at x: -8.5633 y: -6.79922 Captured Piece Queen at x: -8.02502 y: -7.65591
+Rook at x: -1.44557 y: 5.99734 Captured Piece Queen at x: -2.97642 y: 4.35413
+Rook at x: -1.44557 y: 5.99734 Captured Piece Queen at x: -1.47917 y: 5.21799
+Bishop at x: -5.218 y: -9 Captured Piece Queen at x: -4.84865 y: -8.27253
+Queen at x: -3.94108 y: 9 Captured Piece Queen at x: -5.31231 y: 8.80104
+Rook at x: -5.41489 y: 9 Captured Piece Queen at x: -3.94108 y: 9
+Bishop at x: 9.77329 y: -5.33344 Captured Piece Rook at x: 8.73944 y: -3.84828
+Bishop at x: 9.77329 y: -5.33344 Captured Piece Bishop at x: 9.87063 y: -6.18301
+Bishop at x: 9.77329 y: -5.33344 Captured Piece Rook at x: 8.60418 y: -3.62732
+Queen at x: -3.85224 y: -8.18431 Captured Piece Bishop at x: -5.218 y: -9
+Queen at x: -3.85224 y: -8.18431 Captured Piece Bishop at x: -4.11912 y: -7.11253
+Bishop at x: 9 y: 1.67992 Captured Piece Bishop at x: 9 y: 0.965668
+Bishop at x: 7.49921 y: -4.19427 Captured Piece Bishop at x: 7.68816 y: -5.79147
+Bishop at x: 1.16013 y: 9.65538 Captured Piece Rook at x: -0.225893 y: 8.22884
+Rook at x: 3.1228 y: -9.05793 Captured Piece Queen at x: 3.27425 y: -9
+Queen at x: 0.750385 y: -2.21025 Captured Piece Rook at x: 0.710485 y: -0.937648
+Rook at x: -9.03543 y: -5.10308 Captured Piece Queen at x: -8.5633 y: -6.79922
+Bishop at x: 9 y: -4.78199 Captured Piece Bishop at x: 9.77329 y: -5.33344
+Bishop at x: 9 y: -4.78199 Captured Piece Bishop at x: 7.49921 y: -4.19427
+=====End of Round 1 with 28 left on the board =====
+
+Start of round 2
+Queen at x: -6.84935 y: 2.25829 Captured Piece Queen at x: -6.42426 y: 0.788265
+Rook at x: -2.89743 y: -9 Captured Piece Queen at x: -3.85224 y: -8.18431
+Rook at x: -8.80085 y: -1.24136 Captured Piece Bishop at x: -9.38953 y: 0.0452671
+Queen at x: 9 y: 9 Captured Piece Bishop at x: 8.29967 y: 9.27219
+Rook at x: -9 y: 9 Captured Piece Queen at x: -8.81242 y: 9
+Bishop at x: 2.09944 y: 7.93877 Captured Piece Bishop at x: 1.16013 y: 9.65538
+Rook at x: 6.67173 y: 5.99733 Captured Piece Queen at x: 5.52809 y: 5.07709
+Rook at x: 6.67173 y: 5.99733 Captured Piece Queen at x: 7.26252 y: 7.14145
+Rook at x: -9 y: 9 Captured Piece Rook at x: -9 y: 9
+Rook at x: 9 y: 9 Captured Piece Queen at x: 9 y: 9
+Bishop at x: 9 y: 2.62131 Captured Piece Bishop at x: 9 y: 1.67992
+Bishop at x: 2.93978 y: -9.29541 Captured Piece Rook at x: 3.1228 y: -9.05793
+Queen at x: 7.1886 y: 4.22797 Captured Piece Rook at x: 6.67173 y: 5.99733
+=====End of Round 2 with 15 left on the board =====
+
+Start of round 3
+Bishop at x: 2.26539 y: -7.54177 Captured Piece Bishop at x: 2.93978 y: -9.29541
+Bishop at x: 5.65091 y: 4.3873 Captured Piece Queen at x: 7.1886 y: 4.22797
+Rook at x: -5.85879 y: 2.69872 Captured Piece Queen at x: -5.34536 y: 3.76228
+Bishop at x: 9 y: -8.61464 Captured Piece Bishop at x: 9.22706 y: -7.83189
+=====End of Round 3 with 11 left on the board =====
+
+Start of round 4
+Rook at x: -7.10947 y: -1.00222 Captured Piece Rook at x: -5.85879 y: 0.291873
+=====End of Round 4 with 10 left on the board =====
+
+Start of round 5
+Rook at x: -9 y: -9 Captured Piece Rook at x: -9 y: -8.1855
+Rook at x: -9 y: -1.24136 Captured Piece Rook at x: -7.10947 y: -1.00222
+Bishop at x: 2.67075 y: 7.57018 Captured Piece Bishop at x: 1.73001 y: 9
+Bishop at x: 2.67075 y: 7.57018 Captured Piece Rook at x: 4.3189 y: 9
+=====End of Round 5 with 6 left on the board =====
+
+Start of round 6
+Rook at x: -9 y: 5.0143 Captured Piece Rook at x: -9 y: 6.20488
+=====End of Round 6 with 5 left on the board =====
+
+Start of round 7
+=====End of Round 7 with 5 left on the board =====
+
+Start of round 8
+Rook at x: -2.32346 y: -6.57652 Captured Piece Bishop at x: -1.52484 y: -7.17204
+=====End of Round 8 with 4 left on the board =====
+
+Start of round 9
+=====End of Round 9 with 4 left on the board =====
+
+Start of round 10
+=====End of Round 10 with 4 left on the board =====
+
+Start of round 11
+=====End of Round 11 with 4 left on the board =====
+
+Start of round 12
+=====End of Round 12 with 4 left on the board =====
+
+Start of round 13
+=====End of Round 13 with 4 left on the board =====
+
+Start of round 14
+Rook at x: 9.34544 y: 3.01001 Captured Piece Bishop at x: 9 y: 1.80681
+=====End of Round 14 with 3 left on the board =====
+
+Start of round 15
+=====End of Round 15 with 3 left on the board =====
+
+Start of round 16
+=====End of Round 16 with 3 left on the board =====
+
+Start of round 17
+=====End of Round 17 with 3 left on the board =====
+
+Start of round 18
+Bishop at x: 9 y: -0.920099 Captured Piece Rook at x: 9 y: -2.75891
+=====End of Round 18 with 2 left on the board =====
+
+Start of round 19
+=====End of Round 19 with 2 left on the board =====
+
+Start of round 20
+=====End of Round 20 with 2 left on the board =====
+
+Start of round 21
+=====End of Round 21 with 2 left on the board =====
+
+Start of round 22
+=====End of Round 22 with 2 left on the board =====
+
+Start of round 23
+=====End of Round 23 with 2 left on the board =====
+
+Start of round 24
+=====End of Round 24 with 2 left on the board =====
+
+Start of round 25
+=====End of Round 25 with 2 left on the board =====
+
+Start of round 26
+=====End of Round 26 with 2 left on the board =====
+
+Start of round 27
+=====End of Round 27 with 2 left on the board =====
+
+Start of round 28
+=====End of Round 28 with 2 left on the board =====
+
+Start of round 29
+=====End of Round 29 with 2 left on the board =====
+
+Start of round 30
+=====End of Round 30 with 2 left on the board =====
+
+Start of round 31
+Bishop at x: 3.19156 y: -9 Captured Piece Rook at x: 4.0177 y: -9
+=====End of Round 31 with 1 left on the board =====
+
+=============== Summary ===============
+Rook captured: 25
+Bishop captured: 24
+Queen captured: 25
+Rounds: 31/50
+
+Remaining piece(s):
+Bishop at x: 3.19156 y: -9
